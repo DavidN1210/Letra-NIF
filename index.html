@@ -5,7 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cálculo Letra NIF</title>
-    
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        #calculo-letra {
+            display: grid;
+            gap: 25%;
+            place-items: center;
+            width: 70%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: aquamarine;
+            box-shadow: 2px 2px 2px 2px blue;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -20,22 +40,22 @@
 
     <script>
 
-        function calcularLetra(nif){
+        function calcularLetra(nif) {
             //letra = ['T','R','W']
             const regex = /^\d{8}$/;
-            if (regex.test(nif)){
+            if (regex.test(nif)) {
                 let letra = "TRWAGMYFPDXBNJZSQVHLCKE";
-                return letra[nif%23];
+                return letra[nif % 23];
             } else {
                 alert("Debes introducir 8 dígitos");
             }
-         
+
         }
 
-        function mostrarLetraNIF(){
+        function mostrarLetraNIF() {
             let nif = document.getElementById("nif").value;
             let nifConLetra = document.getElementById('display').innerHTML
-            += nif + "-" + calcularLetra(nif);
+                += nif + "-" + calcularLetra(nif);
         }
 
     </script>
